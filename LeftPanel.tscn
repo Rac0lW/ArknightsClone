@@ -1,0 +1,638 @@
+[gd_scene load_steps=21 format=3 uid="uid://2bikqr0otiyy"]
+
+[ext_resource type="Theme" uid="uid://db5vrfqdwg7to" path="res://white_flat.tres" id="1_j440y"]
+
+[sub_resource type="Theme" id="Theme_lhfb7"]
+PanelContainer/styles/panel = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f86fl"]
+bg_color = Color(0.52, 0.52, 0.52, 0.0823529)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x86a1"]
+font_size = 61
+shadow_size = 2
+shadow_color = Color(0.207031, 0.198944, 0.198944, 1)
+shadow_offset = Vector2(4.07, 6.985)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j440y"]
+font_size = 51
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htjhm"]
+bg_color = Color(0.203125, 0.203125, 0.203125, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhfb7"]
+font_color = Color(0.925781, 0.925781, 0.925781, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f86fl"]
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j440y"]
+bg_color = Color(0.464844, 0.148895, 0.148895, 1)
+shadow_color = Color(0.570313, 0.570313, 0.570313, 0.6)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhfb7"]
+bg_color = Color(0.231445, 0.250511, 0.375, 1)
+shadow_color = Color(0.394531, 0.394531, 0.394531, 0.6)
+shadow_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_jun4k"]
+font_size = 51
+font_color = Color(0.164063, 0.164063, 0.164063, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_htjhm"]
+font_size = 26
+font_color = Color(0.636719, 0.636719, 0.636719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x86a1"]
+bg_color = Color(0.362625, 0.74806, 0.957031, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bs5sq"]
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6csr"]
+font_size = 41
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jun4k"]
+bg_color = Color(0.94, 0.3149, 0.047, 0.945098)
+shadow_size = 4
+shadow_offset = Vector2(2.645, -2.25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs5sq"]
+bg_color = Color(0.277344, 0.277344, 0.277344, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vrj13"]
+font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6csr"]
+bg_color = Color(0.82, 0.70725, 0.205, 0.854902)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_m72be"]
+font_color = Color(0.105469, 0.100525, 0.100525, 1)
+
+[node name="LeftPanel" type="Control"]
+layout_mode = 3
+anchor_right = 0.584
+anchor_bottom = 1.0
+offset_right = 0.231934
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimePanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 12.0
+offset_right = -27.9999
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lhfb7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f86fl")
+
+[node name="StatusPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 12.0
+offset_right = -27.9999
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lhfb7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f86fl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatusPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StatusPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "114514"
+
+[node name="Label2" type="Label" parent="StatusPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "114514"
+
+[node name="Label3" type="Label" parent="StatusPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "43"
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 78.0
+offset_top = 65.0
+offset_right = 21.0
+offset_bottom = -436.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j440y")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MainPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="SanityValue" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.28
+color = Color(0.335938, 0.335938, 0.335938, 1)
+
+[node name="TextureButton" type="TextureButton" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 33.0
+offset_right = -162.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Value" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 7.0
+offset_right = -24.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "180"
+label_settings = SubResource("LabelSettings_x86a1")
+
+[node name="Button" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 18.0
+offset_right = -172.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.21875, 0.212769, 0.212769, 1)
+
+[node name="SanityValue" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = 3.0
+offset_right = -11.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "理智 / 180"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Terminal" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
+layout_mode = 2
+text = "终端"
+label_settings = SubResource("LabelSettings_j440y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_htjhm")
+text = "当前"
+label_settings = SubResource("LabelSettings_lhfb7")
+
+[node name="Label3" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
+layout_mode = 2
+text = "全部完成"
+label_settings = SubResource("LabelSettings_f86fl")
+
+[node name="Activities" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="Panel" type="Panel" parent="MainPanel/MarginContainer/VBoxContainer/Activities"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j440y")
+
+[node name="Panel2" type="Panel" parent="MainPanel/MarginContainer/VBoxContainer/Activities"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lhfb7")
+
+[node name="OperatorPanel" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 229.0
+offset_right = -68.0
+offset_bottom = -287.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j440y")
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="OperatorPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_j440y")
+
+[node name="Label" type="Label" parent="OperatorPanel/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = -140.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "编队"
+label_settings = SubResource("LabelSettings_jun4k")
+
+[node name="Button2" type="Button" parent="OperatorPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_j440y")
+
+[node name="Label2" type="Label" parent="OperatorPanel/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = -143.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "干员"
+label_settings = SubResource("LabelSettings_jun4k")
+
+[node name="TextureRect" type="TextureRect" parent="OperatorPanel/Button2/Label2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = 3.0
+grow_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="OperatorPanel/Button2/Label2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 0
+color = Color(0.957031, 0.287273, 0.0822449, 1)
+
+[node name="Label3" type="Label" parent="OperatorPanel/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 72.0
+offset_right = -146.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "角色管理"
+label_settings = SubResource("LabelSettings_htjhm")
+
+[node name="ResourcePanel" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 371.0
+offset_right = 677.0
+offset_bottom = 489.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j440y")
+theme_override_constants/separation = 1
+
+[node name="Button" type="Button" parent="ResourcePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_x86a1")
+
+[node name="Label" type="Label" parent="ResourcePanel/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 50.0
+offset_right = -9.0
+offset_bottom = -11.0
+text = "采购中心"
+label_settings = SubResource("LabelSettings_bs5sq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResourcePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.98
+theme_override_constants/separation = 2
+
+[node name="Button2" type="Button" parent="ResourcePanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_x86a1")
+
+[node name="Label" type="Label" parent="ResourcePanel/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 51.0
+offset_right = -16.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "公开招募"
+label_settings = SubResource("LabelSettings_v6csr")
+
+[node name="ColorRect" type="Panel" parent="ResourcePanel/HBoxContainer/Button2/Label"]
+z_index = 99
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 156.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jun4k")
+
+[node name="Label" type="Label" parent="ResourcePanel/HBoxContainer/Button2/Label/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="ResourcePanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_x86a1")
+
+[node name="ColorRect" type="ColorRect" parent="ResourcePanel/HBoxContainer/Button3"]
+layout_mode = 2
+anchor_left = -0.984
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.0399933
+offset_top = 3.0
+offset_right = -5.26999
+offset_bottom = -84.88
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.277344, 0.277344, 0.277344, 1)
+
+[node name="Label" type="Label" parent="ResourcePanel/HBoxContainer/Button3/ColorRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 26.0
+text = "招募"
+
+[node name="Label2" type="Label" parent="ResourcePanel/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 51.0
+offset_right = -18.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "干员寻访"
+label_settings = SubResource("LabelSettings_v6csr")
+
+[node name="MissionPanel" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 502.0
+offset_right = -86.9999
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j440y")
+theme_override_constants/separation = 24
+
+[node name="Button" type="Button" parent="MissionPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_j440y")
+
+[node name="Label2" type="Label" parent="MissionPanel/Button"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = -139.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "任务"
+label_settings = SubResource("LabelSettings_jun4k")
+
+[node name="ColorRect" type="ColorRect" parent="MissionPanel/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -1.0
+offset_right = -49.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.385132, 0.144531, 1)
+
+[node name="Button2" type="Button" parent="MissionPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_j440y")
+
+[node name="Label3" type="Label" parent="MissionPanel/Button2"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = -158.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "基建"
+label_settings = SubResource("LabelSettings_jun4k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MissionPanel/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MissionPanel/Button2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.68, 0.0612, 0.0612, 0.72549)
+
+[node name="Label" type="Label" parent="MissionPanel/Button2/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_left = 11.0
+offset_top = 1.0
+offset_right = -12.0
+offset_bottom = 1.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="ColorRect2" type="ColorRect" parent="MissionPanel/Button2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.3648, 0.75168, 0.96, 0.792157)
+
+[node name="Label2" type="Label" parent="MissionPanel/Button2/VBoxContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_left = 13.0
+offset_top = 1.0
+offset_right = -10.0
+offset_bottom = 1.0
+text = "26"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="MissionPanel/Button2"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 66.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bs5sq")
+
+[node name="Label" type="Label" parent="MissionPanel/Button2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = -3.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "仓库"
+label_settings = SubResource("LabelSettings_vrj13")
+
+[node name="Label2" type="Label" parent="MissionPanel/Button2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -7.0
+offset_right = 17.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6csr")
+text = " 5 天 "
+label_settings = SubResource("LabelSettings_m72be")
+horizontal_alignment = 1
+vertical_alignment = 1
