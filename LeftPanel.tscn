@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://2bikqr0otiyy"]
+[gd_scene load_steps=22 format=3 uid="uid://2bikqr0otiyy"]
 
 [ext_resource type="Theme" uid="uid://db5vrfqdwg7to" path="res://white_flat.tres" id="1_j440y"]
 
@@ -7,6 +7,8 @@ PanelContainer/styles/panel = null
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f86fl"]
 bg_color = Color(0.52, 0.52, 0.52, 0.0823529)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j440y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x86a1"]
 font_size = 61
@@ -80,8 +82,8 @@ corner_radius_bottom_left = 4
 [sub_resource type="LabelSettings" id="LabelSettings_m72be"]
 font_color = Color(0.105469, 0.100525, 0.100525, 1)
 
-[node name="LeftPanel" type="Control"]
-layout_mode = 3
+[node name="LeftPanel" type="VBoxContainer"]
+anchors_preset = -1
 anchor_right = 0.599
 anchor_bottom = 1.002
 offset_right = -0.0480347
@@ -90,30 +92,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TimePanel" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 29.0
-offset_top = 12.0
-offset_right = -27.9999
-offset_bottom = -600.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme = SubResource("Theme_lhfb7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_f86fl")
 
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j440y")
+
 [node name="StatusPanel" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 29.0
-offset_top = 12.0
-offset_right = -27.9999
-offset_bottom = -600.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme = SubResource("Theme_lhfb7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_f86fl")
 
@@ -135,30 +124,30 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "43"
 
-[node name="MainPanel" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 78.0
-offset_top = 65.0
-offset_right = 21.0
-offset_bottom = -436.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j440y")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+
+[node name="MainPanel" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
 theme = ExtResource("1_j440y")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="VBoxContainer" type="HBoxContainer" parent="MainPanel/MarginContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/MainPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.1
@@ -167,16 +156,16 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="SanityValue" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="SanityValue" type="VBoxContainer" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.28
 color = Color(0.335938, 0.335938, 0.335938, 1)
 
-[node name="TextureButton" type="TextureButton" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,7 +177,7 @@ offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Value" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
+[node name="Value" type="Label" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -202,7 +191,7 @@ grow_vertical = 2
 text = "180"
 label_settings = SubResource("LabelSettings_x86a1")
 
-[node name="Button" type="Button" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
+[node name="Button" type="Button" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -215,12 +204,12 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="ColorRect2" type="ColorRect" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue"]
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.21875, 0.212769, 0.212769, 1)
 
-[node name="SanityValue" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect2"]
+[node name="SanityValue" type="Label" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer/SanityValue/ColorRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -233,7 +222,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "理智 / 180"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 4
@@ -241,63 +230,65 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Terminal" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="Terminal" type="VBoxContainer" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
+[node name="Label" type="Label" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
 layout_mode = 2
 text = "终端"
 label_settings = SubResource("LabelSettings_j440y")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal/HBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal/HBoxContainer"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_htjhm")
 text = "当前"
 label_settings = SubResource("LabelSettings_lhfb7")
 
-[node name="Label3" type="Label" parent="MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
+[node name="Label3" type="Label" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/MarginContainer2/Terminal"]
 layout_mode = 2
 text = "全部完成"
 label_settings = SubResource("LabelSettings_f86fl")
 
-[node name="Activities" type="VBoxContainer" parent="MainPanel/MarginContainer/VBoxContainer"]
+[node name="Activities" type="VBoxContainer" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.1
 
-[node name="Panel" type="Panel" parent="MainPanel/MarginContainer/VBoxContainer/Activities"]
+[node name="Panel" type="Panel" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/Activities"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_j440y")
 
-[node name="Panel2" type="Panel" parent="MainPanel/MarginContainer/VBoxContainer/Activities"]
+[node name="Panel2" type="Panel" parent="MarginContainer/MainPanel/MarginContainer/VBoxContainer/Activities"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_lhfb7")
 
-[node name="OperatorPanel" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 229.0
-offset_right = -68.0
-offset_bottom = -287.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HSeparator3" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j440y")
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_right = 30
+
+[node name="OperatorPanel" type="HBoxContainer" parent="MarginContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("1_j440y")
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="OperatorPanel"]
+[node name="Button" type="Button" parent="MarginContainer4/OperatorPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_j440y")
 
-[node name="Label" type="Label" parent="OperatorPanel/Button"]
+[node name="Label" type="Label" parent="MarginContainer4/OperatorPanel/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -311,12 +302,12 @@ grow_vertical = 2
 text = "编队"
 label_settings = SubResource("LabelSettings_jun4k")
 
-[node name="Button2" type="Button" parent="OperatorPanel"]
+[node name="Button2" type="Button" parent="MarginContainer4/OperatorPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_j440y")
 
-[node name="Label2" type="Label" parent="OperatorPanel/Button2"]
+[node name="Label2" type="Label" parent="MarginContainer4/OperatorPanel/Button2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -330,7 +321,7 @@ grow_vertical = 2
 text = "干员"
 label_settings = SubResource("LabelSettings_jun4k")
 
-[node name="TextureRect" type="TextureRect" parent="OperatorPanel/Button2/Label2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer4/OperatorPanel/Button2/Label2"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -341,7 +332,7 @@ offset_right = 2.0
 offset_bottom = 3.0
 grow_horizontal = 0
 
-[node name="ColorRect" type="ColorRect" parent="OperatorPanel/Button2/Label2"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer4/OperatorPanel/Button2/Label2"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -353,7 +344,7 @@ offset_bottom = 1.0
 grow_horizontal = 0
 color = Color(0.957031, 0.287273, 0.0822449, 1)
 
-[node name="Label3" type="Label" parent="OperatorPanel/Button2"]
+[node name="Label3" type="Label" parent="MarginContainer4/OperatorPanel/Button2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -367,23 +358,28 @@ grow_vertical = 2
 text = "角色管理"
 label_settings = SubResource("LabelSettings_htjhm")
 
-[node name="ResourcePanel" type="HBoxContainer" parent="."]
+[node name="HSeparator4" type="HSeparator" parent="."]
 layout_mode = 2
-offset_left = 104.0
-offset_top = 371.0
-offset_right = 677.0
-offset_bottom = 489.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j440y")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 80
+
+[node name="ResourcePanel" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("1_j440y")
 theme_override_constants/separation = 1
 
-[node name="Button" type="Button" parent="ResourcePanel"]
+[node name="Button" type="Button" parent="MarginContainer2/ResourcePanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_x86a1")
 
-[node name="Label" type="Label" parent="ResourcePanel/Button"]
+[node name="Label" type="Label" parent="MarginContainer2/ResourcePanel/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -397,18 +393,18 @@ grow_vertical = 2
 text = "采购中心"
 label_settings = SubResource("LabelSettings_bs5sq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ResourcePanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/ResourcePanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.98
 theme_override_constants/separation = 2
 
-[node name="Button2" type="Button" parent="ResourcePanel/HBoxContainer"]
+[node name="Button2" type="Button" parent="MarginContainer2/ResourcePanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_x86a1")
 
-[node name="Label" type="Label" parent="ResourcePanel/HBoxContainer/Button2"]
+[node name="Label" type="Label" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -422,7 +418,7 @@ grow_vertical = 2
 text = "公开招募"
 label_settings = SubResource("LabelSettings_v6csr")
 
-[node name="ColorRect" type="Panel" parent="ResourcePanel/HBoxContainer/Button2/Label"]
+[node name="ColorRect" type="Panel" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button2/Label"]
 z_index = 99
 layout_mode = 1
 anchors_preset = 15
@@ -436,7 +432,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jun4k")
 
-[node name="Label" type="Label" parent="ResourcePanel/HBoxContainer/Button2/Label/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button2/Label/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -447,12 +443,12 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button3" type="Button" parent="ResourcePanel/HBoxContainer"]
+[node name="Button3" type="Button" parent="MarginContainer2/ResourcePanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_x86a1")
 
-[node name="ColorRect" type="ColorRect" parent="ResourcePanel/HBoxContainer/Button3"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button3"]
 layout_mode = 2
 anchor_left = -0.984
 anchor_right = 1.0
@@ -465,7 +461,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.277344, 0.277344, 0.277344, 1)
 
-[node name="Label" type="Label" parent="ResourcePanel/HBoxContainer/Button3/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button3/ColorRect"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 3.0
@@ -473,7 +469,7 @@ offset_right = 49.0
 offset_bottom = 26.0
 text = "招募"
 
-[node name="Label2" type="Label" parent="ResourcePanel/HBoxContainer/Button3"]
+[node name="Label2" type="Label" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -487,26 +483,28 @@ grow_vertical = 2
 text = "干员寻访"
 label_settings = SubResource("LabelSettings_v6csr")
 
-[node name="MissionPanel" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 51.0
-offset_top = 502.0
-offset_right = -86.9999
-offset_bottom = -28.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HSeparator5" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j440y")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_right = 110
+
+[node name="MissionPanel" type="HBoxContainer" parent="MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("1_j440y")
 theme_override_constants/separation = 24
 
-[node name="Button" type="Button" parent="MissionPanel"]
+[node name="Button" type="Button" parent="MarginContainer3/MissionPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_j440y")
 
-[node name="Label2" type="Label" parent="MissionPanel/Button"]
+[node name="Label2" type="Label" parent="MarginContainer3/MissionPanel/Button"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -519,7 +517,7 @@ grow_vertical = 2
 text = "任务"
 label_settings = SubResource("LabelSettings_jun4k")
 
-[node name="ColorRect" type="ColorRect" parent="MissionPanel/Button"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer3/MissionPanel/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,12 +530,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.385132, 0.144531, 1)
 
-[node name="Button2" type="Button" parent="MissionPanel"]
+[node name="Button2" type="Button" parent="MarginContainer3/MissionPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_j440y")
 
-[node name="Label3" type="Label" parent="MissionPanel/Button2"]
+[node name="Label3" type="Label" parent="MarginContainer3/MissionPanel/Button2"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -550,7 +548,7 @@ grow_vertical = 2
 text = "基建"
 label_settings = SubResource("LabelSettings_jun4k")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MissionPanel/Button2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/MissionPanel/Button2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -562,12 +560,12 @@ offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MissionPanel/Button2/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer3/MissionPanel/Button2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.68, 0.0612, 0.0612, 0.72549)
 
-[node name="Label" type="Label" parent="MissionPanel/Button2/VBoxContainer/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer3/MissionPanel/Button2/VBoxContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -579,12 +577,12 @@ offset_bottom = 1.0
 text = "1"
 horizontal_alignment = 2
 
-[node name="ColorRect2" type="ColorRect" parent="MissionPanel/Button2/VBoxContainer"]
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer3/MissionPanel/Button2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.3648, 0.75168, 0.96, 0.792157)
 
-[node name="Label2" type="Label" parent="MissionPanel/Button2/VBoxContainer/ColorRect2"]
+[node name="Label2" type="Label" parent="MarginContainer3/MissionPanel/Button2/VBoxContainer/ColorRect2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -596,7 +594,7 @@ offset_bottom = 1.0
 text = "26"
 horizontal_alignment = 2
 
-[node name="Button" type="Button" parent="MissionPanel/Button2"]
+[node name="Button" type="Button" parent="MarginContainer3/MissionPanel/Button2"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 11
@@ -610,7 +608,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_bs5sq")
 
-[node name="Label" type="Label" parent="MissionPanel/Button2/Button"]
+[node name="Label" type="Label" parent="MarginContainer3/MissionPanel/Button2/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -624,7 +622,7 @@ grow_vertical = 2
 text = "仓库"
 label_settings = SubResource("LabelSettings_vrj13")
 
-[node name="Label2" type="Label" parent="MissionPanel/Button2/Button"]
+[node name="Label2" type="Label" parent="MarginContainer3/MissionPanel/Button2/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
