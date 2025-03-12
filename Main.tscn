@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://scb53l1pwwa3"]
+
+[ext_resource type="PackedScene" uid="uid://2bikqr0otiyy" path="res://LeftPanel.tscn" id="2_uu6xs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_glv2v"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6xs"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_glv2v")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uu6xs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uu6xs"]
+size = Vector3(1, 1, 0.059082)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="display" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_uu6xs")
+mesh = SubResource("QuadMesh_uu6xs")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_uu6xs")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(690, 650)
+
+[node name="LeftPanel" parent="SubViewport" instance=ExtResource("2_uu6xs")]

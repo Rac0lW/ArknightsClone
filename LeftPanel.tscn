@@ -82,9 +82,10 @@ font_color = Color(0.105469, 0.100525, 0.100525, 1)
 
 [node name="LeftPanel" type="Control"]
 layout_mode = 3
-anchor_right = 0.584
-anchor_bottom = 1.0
-offset_right = 0.231934
+anchor_right = 0.599
+anchor_bottom = 1.002
+offset_right = -0.0480347
+offset_bottom = 0.703918
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -391,6 +392,8 @@ offset_left = 18.0
 offset_top = 50.0
 offset_right = -9.0
 offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "采购中心"
 label_settings = SubResource("LabelSettings_bs5sq")
 
@@ -600,6 +603,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -8.0
 offset_top = 1.0
 offset_right = 66.0
 grow_horizontal = 0

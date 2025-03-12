@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="ArknightsClone"
-run/main_scene="uid://2bikqr0otiyy"
+run/main_scene="uid://scb53l1pwwa3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
 
 [rendering]
 
