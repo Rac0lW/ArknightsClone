@@ -62,9 +62,10 @@ font_size = 41
 font_size = 41
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jun4k"]
-bg_color = Color(0.94, 0.3149, 0.047, 0.945098)
-shadow_size = 4
-shadow_offset = Vector2(2.645, -2.25)
+bg_color = Color(0.890625, 0.256495, 0.0869751, 1)
+shadow_color = Color(0, 0, 0, 0.733333)
+shadow_size = 2
+shadow_offset = Vector2(1.53, 2.115)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs5sq"]
 bg_color = Color(0.277344, 0.277344, 0.277344, 1)
@@ -420,27 +421,19 @@ grow_vertical = 2
 text = "公开招募"
 label_settings = SubResource("LabelSettings_v6csr")
 
-[node name="ColorRect" type="Panel" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button2/Label"]
-z_index = 99
+[node name="Label" type="Label" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button2/Label"]
+z_index = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 172.0
 offset_top = -5.0
-offset_right = 23.0
-offset_bottom = -62.0
+offset_right = 22.0
+offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jun4k")
-
-[node name="Label" type="Label" parent="MarginContainer2/ResourcePanel/HBoxContainer/Button2/Label/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jun4k")
 text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1

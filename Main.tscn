@@ -1,17 +1,85 @@
-[gd_scene load_steps=6 format=3 uid="uid://scb53l1pwwa3"]
+[gd_scene load_steps=10 format=3 uid="uid://scb53l1pwwa3"]
 
 [ext_resource type="PackedScene" uid="uid://2bikqr0otiyy" path="res://LeftPanel.tscn" id="2_uu6xs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_glv2v"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_uu6xs"]
+sky_material = SubResource("ProceduralSkyMaterial_glv2v")
+
+[sub_resource type="Environment" id="Environment_r0du0"]
+background_mode = 2
+sky = SubResource("Sky_uu6xs")
+tonemap_mode = 2
+
+[sub_resource type="Shader" id="Shader_glv2v"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.4.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx, unshaded;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	vec4 albedo_tex = texture(texture_albedo, base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	if (albedo_tex.rgb == vec3(0,0,0)){
+		ALPHA = 0.0;
+	}
+
+	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+}
+"
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_glv2v"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6xs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uu6xs"]
 resource_local_to_scene = true
-shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_glv2v")
-grow_amount = -0.271
-distance_fade_min_distance = 4.15
-distance_fade_max_distance = 19.25
+render_priority = 0
+shader = SubResource("Shader_glv2v")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("ViewportTexture_glv2v")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_uu6xs"]
 size = Vector2(1.2, 1)
@@ -21,13 +89,21 @@ size = Vector3(1.2, 1, 0.059)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r0du0")
+
 [node name="display" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_uu6xs")
+transform = Transform3D(0.948324, 0, -0.317305, 0, 1, 0, 0.317305, 0, 0.948324, 0.426, -0.005, -0.787)
+material_override = SubResource("ShaderMaterial_uu6xs")
 mesh = SubResource("QuadMesh_uu6xs")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="display"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="display/Area3D"]
 shape = SubResource("BoxShape3D_uu6xs")
 
 [node name="SubViewport" type="SubViewport" parent="."]
@@ -37,4 +113,3 @@ size_2d_override = Vector2i(1140, 595)
 [node name="LeftPanel" parent="SubViewport" instance=ExtResource("2_uu6xs")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.677086)
