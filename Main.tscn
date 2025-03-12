@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://scb53l1pwwa3"]
+[gd_scene load_steps=11 format=3 uid="uid://scb53l1pwwa3"]
 
+[ext_resource type="Script" uid="uid://bds51x32ty37v" path="res://main.gd" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://2bikqr0otiyy" path="res://LeftPanel.tscn" id="2_uu6xs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_glv2v"]
@@ -88,6 +89,7 @@ size = Vector2(1.2, 1)
 size = Vector3(1.2, 1, 0.059)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_uu6xs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
