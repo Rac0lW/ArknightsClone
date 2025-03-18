@@ -1,0 +1,330 @@
+[gd_scene load_steps=15 format=3 uid="uid://cbvhu46kc1u58"]
+
+[ext_resource type="PackedScene" uid="uid://djad8nb8pxaky" path="res://base_ground_9x_9.tscn" id="1_s34ak"]
+[ext_resource type="PackedScene" uid="uid://ceqow5xi4q8pk" path="res://base_ground_3x_3_.tscn" id="2_j5r08"]
+[ext_resource type="PackedScene" uid="uid://bj31w1cjuw88l" path="res://base_ground_1x_9_.tscn" id="3_rdfm0"]
+[ext_resource type="ArrayMesh" uid="uid://dkaicbryvd601" path="res://Assets/base_ground.vox" id="4_rdfm0"]
+[ext_resource type="ArrayMesh" uid="uid://c0ayxwqqm61mq" path="res://Assets/alert.vox" id="5_p3x26"]
+[ext_resource type="ArrayMesh" uid="uid://cd2f6agnptld" path="res://Assets/high_ground.vox" id="6_yerwf"]
+[ext_resource type="ArrayMesh" uid="uid://bsjvhae0oaqwg" path="res://Assets/block.vox" id="7_t0xv0"]
+[ext_resource type="ArrayMesh" uid="uid://dr5a6107fhkeh" path="res://Assets/health_ground.vox" id="8_edgte"]
+[ext_resource type="ArrayMesh" uid="uid://owbm4erkch4n" path="res://Assets/base_platline_ground.vox" id="9_6nxnp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t0xv0"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_edgte"]
+sky_material = SubResource("ProceduralSkyMaterial_t0xv0")
+
+[sub_resource type="Environment" id="Environment_6nxnp"]
+background_mode = 2
+sky = SubResource("Sky_edgte")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yerwf"]
+albedo_color = Color(0.0836, 0.29744, 0.44, 0.686275)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3x26"]
+albedo_color = Color(0.79, 0.1501, 0.1501, 0.313726)
+
+[node name="map_01" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6nxnp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="base_ground_9x9" type="Node3D" parent="."]
+
+[node name="BaseGround2" type="MeshInstance3D" parent="base_ground_9x9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround3" type="MeshInstance3D" parent="base_ground_9x9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround4" type="MeshInstance3D" parent="base_ground_9x9"]
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround6" type="MeshInstance3D" parent="base_ground_9x9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround7" type="MeshInstance3D" parent="base_ground_9x9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround9" type="MeshInstance3D" parent="base_ground_9x9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround8" type="MeshInstance3D" parent="base_ground_9x9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="base_ground_9x10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="BaseGround2" type="MeshInstance3D" parent="base_ground_9x10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround3" type="MeshInstance3D" parent="base_ground_9x10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround4" type="MeshInstance3D" parent="base_ground_9x10"]
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround5" type="MeshInstance3D" parent="base_ground_9x10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround6" type="MeshInstance3D" parent="base_ground_9x10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround9" type="MeshInstance3D" parent="base_ground_9x10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="BaseGround8" type="MeshInstance3D" parent="base_ground_9x10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = ExtResource("4_rdfm0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="base_ground_9x11" parent="." instance=ExtResource("1_s34ak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="base_ground_3x3_" parent="." instance=ExtResource("2_j5r08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="base_ground_1x9_" parent="." instance=ExtResource("3_rdfm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="base_ground_1x9_2" parent="." instance=ExtResource("3_rdfm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="BaseGround" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 20)
+mesh = ExtResource("4_rdfm0")
+
+[node name="BaseGround2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 20)
+mesh = ExtResource("4_rdfm0")
+
+[node name="Alert" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99608, 4, -15.968)
+mesh = ExtResource("5_p3x26")
+surface_material_override/0 = SubResource("StandardMaterial3D_yerwf")
+
+[node name="Alert2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00392, 4, -15.968)
+mesh = ExtResource("5_p3x26")
+surface_material_override/0 = SubResource("StandardMaterial3D_yerwf")
+
+[node name="Alert3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00392437, 4, -15.968)
+mesh = ExtResource("5_p3x26")
+surface_material_override/0 = SubResource("StandardMaterial3D_yerwf")
+
+[node name="Alert4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99608, 4, 20.032)
+mesh = ExtResource("5_p3x26")
+surface_material_override/0 = SubResource("StandardMaterial3D_p3x26")
+
+[node name="Alert5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00392, 4, 20.032)
+mesh = ExtResource("5_p3x26")
+surface_material_override/0 = SubResource("StandardMaterial3D_p3x26")
+
+[node name="Alert6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00392437, 4, 20.032)
+mesh = ExtResource("5_p3x26")
+surface_material_override/0 = SubResource("StandardMaterial3D_p3x26")
+
+[node name="block_sets" type="Node3D" parent="."]
+
+[node name="Block" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-0.0106986, 0, -0.999943, 0, 1, 0, 0.999943, 0, -0.0106986, -9.32263, 5.6, -5.34223)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block2" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.32263, 5.6, -1.97773)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block3" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -9.00058, 5.6, 2.85015)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block5" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-0.0815733, 0, -0.996667, 0, 1, 0, 0.996667, 0, -0.0815733, 6.99942, 5.6, 2.85015)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block6" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(0.00598635, 0, -0.999982, 0, 1, 0, 0.999982, 0, 0.00598635, 6.99942, 5.6, -1.14985)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block7" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-0.468362, 0, -0.883537, 0, 1, 0, 0.883537, 0, -0.468362, 6.99942, 5.6, -6.14985)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block8" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-0.0462523, 0, -0.99893, 0, 1, 0, 0.99893, 0, -0.0462523, 6.99942, 5.6, 9.85015)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block9" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-0.0462523, 0, -0.99893, 0, 1, 0, 0.99893, 0, -0.0462523, 6.99942, 5.6, 13.8502)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Block4" type="MeshInstance3D" parent="block_sets"]
+transform = Transform3D(-0.351564, 0, -0.936164, 0, 1, 0, 0.936164, 0, -0.351564, -9.32263, 5.6, -12.3422)
+mesh = ExtResource("7_t0xv0")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="high_ground_sets" type="Node3D" parent="."]
+
+[node name="HighGround" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, 12.1189)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround11" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, 12.1189)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround12" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, 16.1189)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround13" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, 20.1189)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround14" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, 8.11887)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround16" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, 0.118868)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround18" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, -7.88113)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround20" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, -15.8811)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround15" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, 4.11887)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround17" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, -3.88113)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround19" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00661, 4, -11.8811)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround8" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, 16.1189)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround10" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, -15.8811)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround9" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, 20.1189)
+visible = false
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround7" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, -11.8811)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround6" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, -7.88113)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround5" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, -3.88113)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround2" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, 8.11887)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround3" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, 4.11887)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="HighGround4" type="MeshInstance3D" parent="high_ground_sets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99339, 4, 0.118868)
+mesh = ExtResource("6_yerwf")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/map_01")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.000137479, 0.870399, -0.492348, 0.000243043, 0.492348, 0.870399, 1, -3.63798e-11, -0.000279232, -11.8744, 21.4558, 1.66148)
+
+[node name="HealthGround" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = ExtResource("8_edgte")
+
+[node name="HealthGround2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("8_edgte")
+
+[node name="BasePlatlineGround" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 12)
+mesh = ExtResource("9_6nxnp")
+
+[node name="BasePlatlineGround2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 12)
+mesh = ExtResource("9_6nxnp")

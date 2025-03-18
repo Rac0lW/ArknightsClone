@@ -20,8 +20,13 @@ config/icon="res://icon.svg"
 window/size/transparent=true
 window/per_pixel_transparency/allowed=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_3d=3
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

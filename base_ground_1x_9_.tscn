@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj31w1cjuw88l"]
+
+[ext_resource type="PackedScene" uid="uid://ceqow5xi4q8pk" path="res://base_ground_3x_3_.tscn" id="1_l37oj"]
+
+[node name="base_ground_1x9_" type="Node3D"]
+
+[node name="base_ground_3x3_2" parent="." instance=ExtResource("1_l37oj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 12)
+
+[node name="base_ground_3x3_3" parent="." instance=ExtResource("1_l37oj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="base_ground_3x3_4" parent="." instance=ExtResource("1_l37oj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -12)

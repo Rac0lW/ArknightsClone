@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://scb53l1pwwa3"]
+[gd_scene load_steps=12 format=3 uid="uid://scb53l1pwwa3"]
 
 [ext_resource type="Script" uid="uid://bds51x32ty37v" path="res://main.gd" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://2bikqr0otiyy" path="res://LeftPanel.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://by5rxibo1i28d" path="res://left_top_panel.tscn" id="3_r0du0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_glv2v"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -99,7 +100,7 @@ shadow_enabled = true
 environment = SubResource("Environment_r0du0")
 
 [node name="display" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.948324, 0, -0.317305, 0, 1, 0, 0.317305, 0, 0.948324, 0.426, -0.005, -0.787)
+transform = Transform3D(0.948324, 0, -0.317305, 0, 1, 0, 0.317305, 0, 0.948324, 0.621, -0.005, -0.787)
 material_override = SubResource("ShaderMaterial_uu6xs")
 mesh = SubResource("QuadMesh_uu6xs")
 
@@ -109,9 +110,11 @@ mesh = SubResource("QuadMesh_uu6xs")
 shape = SubResource("BoxShape3D_uu6xs")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(770, 610)
+size = Vector2i(895, 610)
 size_2d_override = Vector2i(1140, 595)
 
 [node name="LeftPanel" parent="SubViewport" instance=ExtResource("2_uu6xs")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="LeftTopPanel" parent="." instance=ExtResource("3_r0du0")]
